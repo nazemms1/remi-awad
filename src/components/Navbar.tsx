@@ -76,7 +76,7 @@ export default function Navbar() {
               <li key={l.href}>
                 <a
                   href={l.href}
-                  onClick={() => setMenuOpen(false)}
+                  onClick={() => setTimeout(() => setMenuOpen(false), 150)}
                   className="block px-6 py-3 transition-colors hover:bg-surface2 hover:text-primary"
                 >
                   {l.label}

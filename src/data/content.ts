@@ -11,7 +11,7 @@ export const profile = {
   email: "remiawad@hotmail.fr",
   phone: "+971 58 997 8874",
   linkedin: "https://fr.linkedin.com/in/rémi-awad-bb6194229",
-  resumeUrl: "#",
+  resumeUrl: "Remi-Awad-CV.pdf",
 };
 
 export const about = {

@@ -19,7 +19,7 @@ export default function Hero() {
           variants={item}
           className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-primary"
         >
-          Computer Engineering × Medicine
+          Pharmacy × Health Economics × Data Science
         </motion.span>
 
         <motion.h1
@@ -45,7 +45,8 @@ export default function Hero() {
           </motion.a>
           <motion.a
             whileHover={{ x: 4 }}
-            href={profile.resumeUrl}
+            href={`${import.meta.env.BASE_URL}${profile.resumeUrl}`}
+            download
             className="text-sm font-semibold text-ink underline decoration-primary/40 decoration-2 underline-offset-4"
           >
             Download résumé →
