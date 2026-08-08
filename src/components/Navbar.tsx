@@ -20,6 +20,16 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const handleMobileNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setMenuOpen(false);
+    const target = document.querySelector(href);
+    // wait for the menu-close animation to finish so the layout shift doesn't fight the scroll
+    window.setTimeout(() => {
+      target?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 300);
+  };
+
   return (
     <header
       className={`sticky top-0 z-50 transition-colors ${
@@ -76,7 +86,7 @@ export default function Navbar() {
               <li key={l.href}>
                 <a
                   href={l.href}
-                  onClick={() => setTimeout(() => setMenuOpen(false), 150)}
+                  onClick={(e) => handleMobileNavClick(e, l.href)}
                   className="block px-6 py-3 transition-colors hover:bg-surface2 hover:text-primary"
                 >
                   {l.label}
